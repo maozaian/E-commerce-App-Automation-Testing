@@ -106,7 +106,7 @@ public void selectEuro() throws InterruptedException {
             int max = count - 1;
             int selectedMainCategory = (int) Math.floor(Math.random() * (max - min + 1) + min);
             action.moveToElement(mainCategories.get(selectedMainCategory)).perform();
-            String selectedMainCategoryName = mainCategories.get(selectedMainCategory).getText();
+            String selectedMainCategoryName = mainCategories.get(selectedMainCategory).getText().toLowerCase().trim();
             System.out.println("The selected main category name is : " + selectedMainCategoryName);
 
 
@@ -119,18 +119,21 @@ public void selectEuro() throws InterruptedException {
             {
                 int subCount = subCategoryLinks.size();
                 System.out.println("The selected sub category count is  " + subCount);
+                min = 0;
+                max = subCount-1;
                 int selectedSubCategory = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                String selectedSubCategoryName = subCategoryLinks.get(selectedSubCategory).getText();
+                String selectedSubCategoryName = subCategoryLinks.get(selectedSubCategory).getText().toLowerCase().trim()   ;
                 System.out.println("The selected sub category name is  " + selectedSubCategoryName);
                 subCategoryLinks.get(selectedSubCategory).click();
-                String subCategoryTitle = Hooks.driver.getCurrentUrl();
+
+                String subCategoryTitle = Hooks.driver.findElement((By.cssSelector("div[class=\"page-title\"] h1"))).getText().toLowerCase().trim();
                 System.out.println("Sub Category Title is :" + subCategoryTitle);
                 Assert.assertTrue(subCategoryTitle.contains(selectedSubCategoryName.toLowerCase().trim()));            }
             else
             {
                 mainCategories.get(selectedMainCategory).click();
-
-                Assert.assertTrue(Hooks.driver.getCurrentUrl().contains(selectedMainCategoryName.toLowerCase().trim()));
+                String CategoryTitle = Hooks.driver.findElement(By.cssSelector("div[class=\"page-title\"] h1")).getText().toLowerCase().trim();
+                Assert.assertTrue(CategoryTitle.contains(selectedMainCategoryName.toLowerCase().trim()));
             }
 
             Hooks.driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);

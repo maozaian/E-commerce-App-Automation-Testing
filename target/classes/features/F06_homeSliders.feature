@@ -1,5 +1,5 @@
 @smoke
-Feature: user could select home page sliders
+Feature: F06_user could select home page sliders
   Scenario: 2:  first slider is clickable on home page
     When        user clicks on first slider
     And         user select product of first slider

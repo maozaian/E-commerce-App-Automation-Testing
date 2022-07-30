@@ -1,6 +1,6 @@
+@smoke
 
-
-  Feature:
+  Feature: F07_user could follow social media links
    Scenario:     1:  user opens facebook link
 
       When             user opens facebook link

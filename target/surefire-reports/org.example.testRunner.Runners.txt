@@ -1,16 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.example.testRunner.Runners
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 298.132 s <<< FAILURE! - in org.example.testRunner.Runners
-org.example.testRunner.Runners.runScenario["user could hover categories", "F05  user could hover categories and select sub Category"](11)  Time elapsed: 12.333 s  <<< FAILURE!
-java.lang.IndexOutOfBoundsException: Index: 5, Size: 3
-	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
-	at java.util.ArrayList.get(ArrayList.java:435)
-	at org.example.pages.P03_homePage.hoverCategories(P03_homePage.java:123)
-	at org.example.stepDefs.D05_hoverCategoriesStepDef.user_hover_categories(D05_hoverCategoriesStepDef.java:13)
-	at ✽.user could hover categories and select sub Category(file:///C:/Users/maoza/IdeaProjects/demonopcommerce/src/main/resources/features/F05_hoverCategories.feature:4)
-
-org.example.testRunner.Runners.runScenario["2:  first slider is clickable on home page", "user could select home page sliders"](12)  Time elapsed: 13.233 s  <<< FAILURE!
+Tests run: 19, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 617.057 s <<< FAILURE! - in org.example.testRunner.Runners
+org.example.testRunner.Runners.runScenario["2:  first slider is clickable on home page", "F06_user could select home page sliders"](12)  Time elapsed: 27.387 s  <<< FAILURE!
 java.lang.AssertionError: expected [https://demo.nopcommerce.com/nokia-lumia-1020] but found [https://demo.nopcommerce.com/]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -18,11 +10,11 @@ java.lang.AssertionError: expected [https://demo.nopcommerce.com/nokia-lumia-102
 	at org.testng.Assert.assertEquals(Assert.java:131)
 	at org.testng.Assert.assertEquals(Assert.java:655)
 	at org.testng.Assert.assertEquals(Assert.java:665)
-	at org.example.pages.P03_homePage.getFirstSliderProductUrl(P03_homePage.java:160)
+	at org.example.pages.P03_homePage.getFirstSliderProductUrl(P03_homePage.java:163)
 	at org.example.stepDefs.D06_homeSlidersStepDef.user_go_first_product_page(D06_homeSlidersStepDef.java:23)
 	at ✽.user go to first product page(file:///C:/Users/maoza/IdeaProjects/demonopcommerce/src/main/resources/features/F06_homeSliders.feature:6)
 
-org.example.testRunner.Runners.runScenario["2: second slider is clickable on home page", "user could select home page sliders"](13)  Time elapsed: 18.375 s  <<< FAILURE!
+org.example.testRunner.Runners.runScenario["2: second slider is clickable on home page", "F06_user could select home page sliders"](13)  Time elapsed: 18.128 s  <<< FAILURE!
 java.lang.AssertionError: expected [https://demo.nopcommerce.com/iphone-6] but found [https://demo.nopcommerce.com/]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
@@ -30,7 +22,14 @@ java.lang.AssertionError: expected [https://demo.nopcommerce.com/iphone-6] but f
 	at org.testng.Assert.assertEquals(Assert.java:131)
 	at org.testng.Assert.assertEquals(Assert.java:655)
 	at org.testng.Assert.assertEquals(Assert.java:665)
-	at org.example.pages.P03_homePage.getSecondSliderProductUrl(P03_homePage.java:188)
+	at org.example.pages.P03_homePage.getSecondSliderProductUrl(P03_homePage.java:191)
 	at org.example.stepDefs.D06_homeSlidersStepDef.user_go_second_product_page(D06_homeSlidersStepDef.java:38)
 	at ✽.user go to second product page(file:///C:/Users/maoza/IdeaProjects/demonopcommerce/src/main/resources/features/F06_homeSliders.feature:11)
+
+org.example.testRunner.Runners.runScenario["3:  user opens rss link", "F07_user could follow social media links"](16)  Time elapsed: 15.055 s  <<< FAILURE!
+java.lang.IndexOutOfBoundsException: Index: 1, Size: 1
+	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
+	at java.util.ArrayList.get(ArrayList.java:435)
+	at org.example.stepDefs.D07_followUsStepDef.rss_opened_in_new_tab(D07_followUsStepDef.java:66)
+	at ✽.rss "https://demo.nopcommerce.com/new-online-store-is-open" is opened in new tab(file:///C:/Users/maoza/IdeaProjects/demonopcommerce/src/main/resources/features/F07_followUs.feature:17)
 
